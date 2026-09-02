@@ -36,7 +36,7 @@ export function CurrentDate() {
         <section className={style.date_section}>
             <div className={style.date_text_container}>
                 <h1>Seu equilíbrio de hoje</h1>
-                <p>Registre suas obrigações e momentos de lazer para visualizar sei equilíbrio</p>
+                <p>Registre suas obrigações e momentos de lazer para visualizar seu equilíbrio</p>
             </div>
             <div className={style.date_section_container}>
                 <span className={style.day}>Hoje</span>
