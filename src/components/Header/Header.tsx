@@ -21,7 +21,9 @@ export function Header() {
           <div className={style.navbar_user_container}>
               <nav className={style.navbar}>
                 <span className={style.nav_item}>Hoje</span>
+                <span>|</span>
                 <span className={style.nav_item}>Semana</span>
+                <span>|</span>
                 <span className={style.nav_item}>Histórico</span>
               </nav>
               <img className={style.user} src="/user.svg" />

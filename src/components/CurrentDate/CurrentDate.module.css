@@ -1,0 +1,96 @@
+.date_section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+.date_text_container {
+  display: none;
+}
+
+.date_section_container {
+  margin: 1rem 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 4rem;
+  width: 90%;
+}
+
+.day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.25;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #22c55e;
+  background-color: #22c55e1f;
+  color: #22c55e;
+  max-width: 20%;
+  min-width: 15%;
+  align-self: center;
+}
+
+.date_container {
+  display: flex;
+  flex-direction: flex;
+  gap: 0.5rem;
+}
+
+.calendarIcon {
+  width: auto;
+  height: auto;
+}
+
+.formatted_date_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.date {
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.dayWeek {
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.25;
+  color: #22c55e;
+}
+
+@media (min-width: 576px) {
+  .day {
+    display: none;
+  }
+
+  .date_text_container {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 2rem;
+    gap: .25rem;
+    font-size: 1rem;
+  }
+
+  .date_text_container h1 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.5;
+    
+  }
+
+  .date_text_container p {
+    color: #6b7280
+  }
+
+  .date_section_container {
+    justify-content: flex-end;
+  }
+}

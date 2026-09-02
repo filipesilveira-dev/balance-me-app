@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 4rem;
+  height: 4.5rem;
   width: 100%;
   background-color: #fdfdfd;
   border-bottom: 1px solid rgba(0, 0, 0, 0);
@@ -14,6 +14,7 @@
   justify-content: center;
   align-items: center;
   gap: 0.25rem;
+  margin-inline: 1rem;
 }
 
 .logo_img {
@@ -30,16 +31,30 @@
 .menu {
   width: 2rem;
   height: 2rem;
+  padding: .5rem;
   margin-inline: 1rem;
+}
+
+.menu:hover{
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.397);
 }
 
 .navbar {
   display: none;
 }
 
+.nav_item {
+  font-size: .9rem;
+  font-weight: 600;
+  line-height: 1.25;
+  padding: .25rem  .75rem;
+}
+
 .nav_item:hover {
-  border: 1px solid black;
-  background-color: green;
+  border-radius: 10px;
+  border: 1px solid #22c55e;
+  background-color: #22c55e4d;
 }
 
 .user {
@@ -49,6 +64,11 @@
   padding: 0.25rem;
   margin-inline: 1rem;
 }
+
+.user:hover{
+    border: 2px solid rgba(0, 0, 0, 0.397);
+}
+
 @media (min-width: 576px) {
   /* desktop */
   .logo_container {
