@@ -1,0 +1,52 @@
+.form_section_container {
+  margin: 2rem 1rem;
+  /* padding: 0.5rem; */
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.accordion_button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 2.5rem;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+.accordion_button h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.accordion_button:hover {
+  cursor: pointer;
+}
+
+.accordion_button::after {
+  content: "";
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("/src/arrow-top.svg");
+  transition: 0.25s;
+  transform: rotate(180deg);
+}
+
+.accordion_button::before {
+  content: "";
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("/src/arrow-top.svg");
+  transition: 0.25s;
+  transform: rotate(180deg);
+}
+
+.form_container {
+  margin: 1rem 2rem;
+}

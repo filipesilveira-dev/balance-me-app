@@ -11,7 +11,7 @@ interface BalanceMeStore {
 }
 
 // Criação do Store
-export const useBalanceStore = create<BalanceMeStore>()((set) => ({
+export const useBalanceMeStore = create<BalanceMeStore>()((set) => ({
     // Valor inicial de items: um array vazio
   items: [],
 
