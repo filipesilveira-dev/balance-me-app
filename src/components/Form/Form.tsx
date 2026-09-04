@@ -4,6 +4,7 @@ import type { NewItem } from "../../types/Item";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import style from "./Form.module.css";
+import { Accordion } from "../Accordion/Accordion";
 
 interface FormProps {
   title: string;
@@ -74,33 +75,35 @@ export function Form({
 
   return (
     <section className={style.form_section_container}>
-      {/* Botão do accordion */}
-      <button className={style.accordion_button}>
-        <h2>{title}</h2>
-      </button>
-      <form className={style.form_container} onSubmit={handleSubmit(onSubmit)}>
-        {/* Uso da biblioteca React Hook Form para identificar o input */}
-        <input
-          {...register("name")}
-          type="text"
-          placeholder={placeHolderText}
-        />
-        <p>{subTitle}</p>
-        {/* Exibição condicional da mensagem de erro do campo name */}
-        {errors.name && (
-          <span style={{ color: "red" }}>{errors.name.message}</span>
-        )}
+      <Accordion title={title} variant={variant}>
+        <form
+          className={style.form_container}
+          onSubmit={handleSubmit(onSubmit)}
+        >
+          {/* Uso da biblioteca React Hook Form para identificar o input */}
+          <input
+            {...register("name")}
+            type="text"
+            placeholder={placeHolderText}
+          />
+          <p>{subTitle}</p>
+          {/* Exibição condicional da mensagem de erro do campo name */}
+          {errors.name && (
+            <span style={{ color: "red" }}>{errors.name.message}</span>
+          )}
 
-        <h2>{sliderTitle}</h2>
-        {/* Uso da biblioteca React Hook Form para identificar o input */}
-        <input {...register("intensity")} type="range" min={1} max={10} />
+          <h2>{sliderTitle}</h2>
+          {/* Uso da biblioteca React Hook Form para identificar o input */}
+          <input {...register("intensity")} type="range" min={1} max={10} />
 
-        {errors.intensity && (
-          <span style={{ color: "red" }}>{errors.intensity.message}</span>
-        )}
+          {errors.intensity && (
+            <span style={{ color: "red" }}>{errors.intensity.message}</span>
+          )}
 
-        <button type="submit">{buttonText}</button>
-      </form>
+          <button type="submit">{buttonText}</button>
+        </form>
+      </Accordion>
+
       <div>
         <h2>{listTitle}</h2>
         <div>Lista de obrigações/lazeres</div>
