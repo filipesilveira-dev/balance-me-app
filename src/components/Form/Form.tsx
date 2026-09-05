@@ -5,6 +5,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import style from "./Form.module.css";
 import { Accordion } from "../Accordion/Accordion";
+import { ListItem } from "../ListItem/ListItem";
+import { useBalanceMeStore } from "../../store/useBalanceMeStore";
 
 interface FormProps {
   title: string;
@@ -73,7 +75,9 @@ export function Form({
     reset();
   };
 
-  const variantStyles = variant;
+  const items = useBalanceMeStore((state) => state.items);
+  const total = items.filter(item => item.type === variant).reduce((acc, item)=> acc + item.intensity,0)
+
 
   return (
     <section className={style.form_section_container}>
@@ -117,32 +121,30 @@ export function Form({
             <span style={{ color: "red" }}>{errors.intensity.message}</span>
           )}
 
-          <div>
+          {/* Botão de adicionar */}
+          
             <button
-              className={`${variantStyles === "obligation" ? style.obligation : style.leisure} ${style.form_button}`}
+              className={`${variant === "obligation" ? style.obligation : style.leisure} ${style.form_button}`}
               type="submit"
             >
               {buttonText}
             </button>
-          </div>
+          
+
         </form>
 
         {/* A renderização aqui será feita com map() */}
         <div className={style.list_container}>
           <h2 className={style.listTitle}>{listTitle}</h2>
-          <ul>
-            <li>Atividade 1</li>
-            <li>Atividade 2</li>
-            <li>Atividade 3</li>
-          </ul>
+            <ListItem variant={variant}/>
         </div>
       </Accordion>
       <div className={style.total_container}>
         <h3>Total:</h3>
         <span
-          className={`${variantStyles === "obligation" ? style.obligation : style.leisure} ${style.total_number}`}
+          className={`${variant === "obligation" ? style.obligation : style.leisure} ${style.total_number}`}
         >
-          xx pontos
+          {total} pontos
         </span>
       </div>
     </section>

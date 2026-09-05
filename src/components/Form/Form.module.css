@@ -1,6 +1,5 @@
 .form_section_container {
   margin: 1rem 0.75rem;
-  /* padding: 0.5rem; */
   border: 2px solid #6b728054;
   border-radius: 10px;
   width: 80%;
@@ -145,6 +144,11 @@
   margin: 1rem;
 }
 
+.listTitle{
+  padding-bottom: .5rem;
+  border-bottom: 1px solid #6b728025;
+}
+
 .total_container {
   display: flex;
   justify-content: space-between;
@@ -168,10 +172,11 @@
   color: #ef4444;
 }
 
-@media (min-width: 576px) {
-
+@media (min-width: 500px){
+  .form_button {
+    width: 70%;
+  }
 }
-
 @media (min-width: 992px) {
   .form_subTitle {
     display: none;
