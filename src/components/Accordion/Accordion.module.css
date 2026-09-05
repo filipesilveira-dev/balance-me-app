@@ -1,0 +1,94 @@
+.trigger {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px 10px 0 0;
+  height: 3rem;
+  width: 100%;
+  cursor: pointer;
+  border: 0;
+  border-bottom: 2px solid #6b72800e;
+  padding-inline: 0.5rem;
+}
+
+.trigger_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.trigger h2 {
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.25;
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.accordion_subTitle {
+  display: none;
+}
+
+.obligation.trigger h2::before {
+  content: "";
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("/work.svg");
+}
+
+.leisure.trigger h2::before {
+  content: "";
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("/leaf.svg");
+}
+
+.accordion.open .trigger img {
+  transition: 0.3s;
+}
+
+.accordion.closed .trigger img {
+  transition: 0.3s;
+  transform: rotate(180deg);
+}
+
+.obligation {
+  background-color: #ef444421;
+}
+
+.obligation h2 {
+  color: #ef4444;
+}
+
+.leisure {
+  background-color: #22c55e21;
+}
+
+.leisure h2 {
+  color: #22c55e;
+}
+
+@media (min-width: 992px) {
+  .trigger {
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 4.25rem;
+    gap: 0.25rem;
+  }
+
+  .accordion_subTitle {
+    display: block;
+    color: #6b7280;
+    font-weight: 600;
+  }
+}

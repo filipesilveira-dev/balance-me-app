@@ -73,40 +73,77 @@ export function Form({
     reset();
   };
 
+  const variantStyles = variant;
+
   return (
     <section className={style.form_section_container}>
-      <Accordion title={title} variant={variant}>
+      <Accordion title={title} subTitle={subTitle} variant={variant}>
         <form
           className={style.form_container}
           onSubmit={handleSubmit(onSubmit)}
         >
           {/* Uso da biblioteca React Hook Form para identificar o input */}
           <input
+            className={style.form_input}
             {...register("name")}
             type="text"
             placeholder={placeHolderText}
           />
-          <p>{subTitle}</p>
+          <p className={style.form_subTitle}>{subTitle}</p>
+
           {/* Exibição condicional da mensagem de erro do campo name */}
           {errors.name && (
             <span style={{ color: "red" }}>{errors.name.message}</span>
           )}
 
-          <h2>{sliderTitle}</h2>
+          <h2 className={style.form_sliderTitle}>{sliderTitle}</h2>
           {/* Uso da biblioteca React Hook Form para identificar o input */}
-          <input {...register("intensity")} type="range" min={1} max={10} />
-
+          <div className={style.form_input_range_container}>
+            <span>
+              <strong>1</strong>
+            </span>
+            <input
+              className={style.form_input_range}
+              {...register("intensity")}
+              type="range"
+              min={1}
+              max={10}
+            />
+            <span>
+              <strong>10</strong>
+            </span>
+          </div>
           {errors.intensity && (
             <span style={{ color: "red" }}>{errors.intensity.message}</span>
           )}
 
-          <button type="submit">{buttonText}</button>
+          <div>
+            <button
+              className={`${variantStyles === "obligation" ? style.obligation : style.leisure} ${style.form_button}`}
+              type="submit"
+            >
+              {buttonText}
+            </button>
+          </div>
         </form>
-      </Accordion>
 
-      <div>
-        <h2>{listTitle}</h2>
-        <div>Lista de obrigações/lazeres</div>
+        {/* A renderização aqui será feita com map() */}
+        <div className={style.list_container}>
+          <h2 className={style.listTitle}>{listTitle}</h2>
+          <ul>
+            <li>Atividade 1</li>
+            <li>Atividade 2</li>
+            <li>Atividade 3</li>
+          </ul>
+        </div>
+      </Accordion>
+      <div className={style.total_container}>
+        <h3>Total:</h3>
+        <span
+          className={`${variantStyles === "obligation" ? style.obligation : style.leisure} ${style.total_number}`}
+        >
+          xx pontos
+        </span>
       </div>
     </section>
   );
