@@ -1,5 +1,6 @@
 import type { Item } from "../../types/Item";
 import { EmptySytate } from "../Empty State/EmptyState";
+import { ProgressBar } from "../Progress Bar/ProgressBar";
 import style from "./Dashboard.module.css";
 
 interface DashboardProps {
@@ -15,6 +16,7 @@ export function Dashboard({ items }: DashboardProps) {
           <div className={style.dashboard}>
             <h3>Equilíbrio do dia</h3>
             <div>Barra de progresso</div>
+            <ProgressBar/>
           </div>
         </section>
       )}
