@@ -81,7 +81,7 @@ export function Form({
 
   return (
     <section className={style.form_section_container}>
-      <Accordion title={title} subTitle={subTitle} variant={variant}>
+      <Accordion title={title} variant={variant}>
         <form
           className={style.form_container}
           onSubmit={handleSubmit(onSubmit)}
@@ -123,15 +123,20 @@ export function Form({
 
           {/* Botão de adicionar */}
           
-            <button
-              className={`${variant === "obligation" ? style.obligation : style.leisure} ${style.form_button}`}
-              type="submit"
-            >
-              {buttonText}
-            </button>
+            <div className={style.button_container}>
+              <button
+                className={`${variant === "obligation" ? style.obligation : style.leisure} ${style.form_button}`}
+                type="submit"
+              >
+                {buttonText}
+              </button>
+            </div>
           
 
         </form>
+
+          {/* Elemento renderizado caso items esteja vazio com base na variant */}
+          {items.filter(item => item.type === variant).length === 0 && <div>Nenhuma atividade adicionada</div>}
 
         {/* A renderização aqui será feita com map() */}
         <div className={style.list_container}>

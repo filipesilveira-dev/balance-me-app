@@ -17,7 +17,7 @@ export function ListItem({variant}: ListItemProps) {
               {item.name}
               <div className={style.btn_container}>
                   <span className={`${variant === "obligation" ? style.obligation : style.leisure}`}>{item.intensity}</span>
-                  <button className={style.btn} onClick={() => deleteItem(item.id)}>
+                  <button className={style.btn_delete} onClick={() => deleteItem(item.id)}>
                     <img src="/delete.svg" />
                   </button>
               </div>

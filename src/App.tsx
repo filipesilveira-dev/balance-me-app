@@ -3,6 +3,7 @@ import { Form } from "./components/Form/Form";
 import { Header } from "./components/Header/Header";
 import { useBalanceMeStore } from "./store/useBalanceMeStore";
 import style from "./App.module.css";
+import { Dashboard } from "./components/Dashboard/Dashboard";
 
 function App() {
   const addItem = useBalanceMeStore((state) => state.addItem);
@@ -32,6 +33,7 @@ function App() {
           onAddItem={addItem}
         />
       </div>
+      <Dashboard/>
     </>
   );
 }

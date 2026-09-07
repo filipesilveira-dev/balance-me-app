@@ -4,12 +4,11 @@ import style from "./Accordion.module.css";
 
 interface accordionProps {
   title: string;
-  subTitle: string;
   variant?: "obligation" | "leisure";
   children: React.ReactNode;
 }
 
-export function Accordion({ title, subTitle, variant, children }: accordionProps) {
+export function Accordion({ title, variant, children }: accordionProps) {
   // O accordion inicia aberto
   const [isOpen, setIsOpen] = useState(true);
 
@@ -20,6 +19,7 @@ export function Accordion({ title, subTitle, variant, children }: accordionProps
     <div
       className={` ${style.accordion}   ${isOpen ? style.open : style.closed}`}
     >
+      {/* Botão do Accordion */}
       <button
         className={`${variantStyles === "obligation" ? style.obligation : style.leisure} ${style.trigger}`}
         onClick={() => setIsOpen(!isOpen)}
@@ -28,8 +28,9 @@ export function Accordion({ title, subTitle, variant, children }: accordionProps
           <h2>{title}</h2>
           <img src="/keyboard-arrow-up.svg" />
         </div>
-        <p className={style.accordion_subTitle}>{subTitle}</p>
       </button>
+
+      {/* Animação de abrir/fechar Accordion */}
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
