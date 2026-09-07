@@ -6,6 +6,7 @@ import style from "./App.module.css";
 import { Dashboard } from "./components/Dashboard/Dashboard";
 
 function App() {
+  const items = useBalanceMeStore((state) => state.items);
   const addItem = useBalanceMeStore((state) => state.addItem);
   return (
     <>
@@ -33,7 +34,7 @@ function App() {
           onAddItem={addItem}
         />
       </div>
-      <Dashboard/>
+      <Dashboard items={items}/>
     </>
   );
 }

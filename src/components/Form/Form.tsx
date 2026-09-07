@@ -7,6 +7,7 @@ import style from "./Form.module.css";
 import { Accordion } from "../Accordion/Accordion";
 import { ListItem } from "../ListItem/ListItem";
 import { useBalanceMeStore } from "../../store/useBalanceMeStore";
+import { EmptySytate } from "../Empty State/EmptyState";
 
 interface FormProps {
   title: string;
@@ -136,7 +137,7 @@ export function Form({
         </form>
 
           {/* Elemento renderizado caso items esteja vazio com base na variant */}
-          {items.filter(item => item.type === variant).length === 0 && <div>Nenhuma atividade adicionada</div>}
+          {items.filter(item => item.type === variant).length === 0 && <EmptySytate variant ={variant}/>}
 
         {/* A renderização aqui será feita com map() */}
         <div className={style.list_container}>

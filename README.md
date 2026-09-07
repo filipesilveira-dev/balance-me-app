@@ -1,3 +1,12 @@
+## Tecnologias
+
+React
+TypeScript
+zustand
+localStorage
+React Hokk Form
+Zod
+
 ## Aprendizados
 
 React Hook Form: biblioteca para gerenciamento de formulários em React
