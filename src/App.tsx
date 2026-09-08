@@ -3,10 +3,11 @@ import { Form } from "./components/Form/Form";
 import { Header } from "./components/Header/Header";
 import { useBalanceMeStore } from "./store/useBalanceMeStore";
 import style from "./App.module.css";
-import { Dashboard } from "./components/Dashboard/Dashboard";
+// import { Dashboard } from "./components/Dashboard/Dashboard";
+import { ProgressBar } from "./components/Progress Bar/ProgressBar";
 
 function App() {
-  const items = useBalanceMeStore((state) => state.items);
+  // const items = useBalanceMeStore((state) => state.items);
   const addItem = useBalanceMeStore((state) => state.addItem);
   return (
     <>
@@ -34,7 +35,7 @@ function App() {
           onAddItem={addItem}
         />
       </div>
-      <Dashboard items={items}/>
+      <ProgressBar/>
     </>
   );
 }

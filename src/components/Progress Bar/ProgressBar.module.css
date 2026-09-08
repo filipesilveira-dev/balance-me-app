@@ -1,11 +1,97 @@
+.progressBar_section_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  margin: auto;
+}
+
+/* Container Principal (Grid) */
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 3 colunas de tamanhos iguais */
+  grid-template-rows: repeat(3, auto); /* 3 linhas que se adaptam ao conteúdo */
+  justify-content: center;
+  align-items: center; /* Centraliza os itens verticalmente */
+  margin-top: 1rem;
+
+  text-align: center;
+
+  border: 1px solid black;
+  padding: .5rem;
+
+  background-color: #6b728017;
+  border: 2px solid #6b728054;
+  border-radius: 10px;
+  width: 85%;
+  min-width: 4rem;
+}
+
+/* Coluna 1 (Ocupa o espaço vertical de 3 linhas) */
+.colunaLateralEsquerda {
+  grid-column: 1;
+  grid-row: 1 / 4; /* Vai da linha 1 até a linha 4 (ocupa 3 espaços) */
+  display: flex;
+  flex-direction: column;
+  margin-right: 1rem;
+  gap: .25rem;
+}
+
+.colunaLateralEsquerda span {
+  color: #ef4444;
+}
+
+.left_column_title{
+    font-weight: 600;
+}
+
+.right_column_title{
+    font-weight: 600;
+}
+
+.colunaLateralDireita span {
+  color: #22c55e;
+}
+
+/* Coluna 2 (O meio - os elementos vão se distribuir nas linhas) */
+.colunaMeioItem {
+  grid-column: 2/5;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+
+/* Coluna 3 (Ocupa o espaço vertical de 3 linhas) */
+.colunaLateralDireita {
+  grid-column: 5;
+  grid-row: 1 / 4; /* Vai da linha 1 até a linha 4 (ocupa 3 espaços) */
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+  gap: .25rem;
+}
+
+.colunaLateralDireita p {
+  color: #22c55e;
+}
+
+.colunaLateralEsquerda p {
+  color: #ef4444;
+}
+
 .wrapper {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
   width: 100%;
 }
 
 .track {
   display: flex;
   width: 100%;
-  height: 16px;
+  height: 0.5rem;
   overflow: hidden;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.05);
@@ -14,46 +100,26 @@
 
 .fill {
   height: 100%;
-  transition: flex-basis 500ms ease-out, opacity 300ms ease-out;
+  width: 100%;
+  transition:
+    flex-basis 500ms ease-out,
+    opacity 300ms ease-out;
 }
 
 .fillObligations {
-  background-color: var(--color-obligations, #5b8def);
+  background-color: #ef4444;
 }
 
 .fillLeisure {
-  background-color: var(--color-leisure, #f2a65a);
+  background-color: #22c55e;
 }
 
-.emptyState {
-  opacity: 0.35;
+.left_column_score{
+    font-weight: 600;
+    font-size: 1.25rem;
 }
 
-.legend {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 8px;
-  font-size: 14px;
-}
-
-.legendItem {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.legendItem--obligations {
-  color: var(--color-obligations, #5b8def);
-}
-
-.legendItem--leisure {
-  color: var(--color-leisure, #f2a65a);
-}
-
-.dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  background-color: currentColor;
+.right_column_score{
+    font-weight: 600;
+    font-size: 1.25rem;
 }
