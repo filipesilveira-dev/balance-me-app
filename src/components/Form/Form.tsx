@@ -108,7 +108,7 @@ export function Form({
               <strong>1</strong>
             </span>
             <input
-              className={style.form_input_range}
+              className={`${variant === "obligation" ? style.form_input_range_obligation : style.form_input_range_leisure} ${style.form_input_range}`}
               {...register("intensity")}
               type="range"
               min={1}

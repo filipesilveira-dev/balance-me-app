@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: center;
   width: 90%;
+  height: 8rem;
   margin: auto;
 }
 
@@ -18,12 +19,13 @@
   text-align: center;
 
   border: 1px solid black;
-  padding: .5rem;
+  padding: 0.5rem;
 
-  background-color: #6b728017;
+  background-color: #6b72800a;
   border: 2px solid #6b728054;
   border-radius: 10px;
   width: 85%;
+  height: 100%;
   min-width: 4rem;
 }
 
@@ -34,19 +36,21 @@
   display: flex;
   flex-direction: column;
   margin-right: 1rem;
-  gap: .25rem;
+  gap: 0.25rem;
 }
 
 .colunaLateralEsquerda span {
   color: #ef4444;
 }
 
-.left_column_title{
-    font-weight: 600;
+.colunaMeioItem_wrapper_left_title {
+  color: #ef4444;
+  font-weight: 700;
 }
 
-.right_column_title{
-    font-weight: 600;
+.colunaMeioItem_wrapper_right_title {
+  color: #22c55e;
+  font-weight: 700;
 }
 
 .colunaLateralDireita span {
@@ -56,10 +60,25 @@
 /* Coluna 2 (O meio - os elementos vão se distribuir nas linhas) */
 .colunaMeioItem {
   grid-column: 2/5;
+  grid-row: 1/4;
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 10px;
+  height: 100%;
+}
+
+.colunaMeioItem_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 70%;
+  gap: 2rem;
+}
+
+.title_wrapper{
+  display: none;
 }
 
 /* Coluna 3 (Ocupa o espaço vertical de 3 linhas) */
@@ -69,7 +88,7 @@
   display: flex;
   flex-direction: column;
   margin-left: 1rem;
-  gap: .25rem;
+  gap: 0.25rem;
 }
 
 .colunaLateralDireita p {
@@ -86,6 +105,7 @@
 
   align-items: center;
   width: 100%;
+  
 }
 
 .track {
@@ -96,6 +116,7 @@
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.05);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  height: .75rem;
 }
 
 .fill {
@@ -114,12 +135,38 @@
   background-color: #22c55e;
 }
 
-.left_column_score{
-    font-weight: 600;
-    font-size: 1.25rem;
+.left_column_score {
+  font-weight: 600;
+  font-size: 1.25rem;
 }
 
-.right_column_score{
-    font-weight: 600;
-    font-size: 1.25rem;
+.right_column_score {
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .progressBar_section_container {
+    width: 100%;
+  }
+
+  .gridContainer {
+    width: 95%;
+  }
+}
+
+@media (min-width: 992px) {
+  .gridContainer {
+    width: 95%;
+  }
+
+  .colunaMeioItem_wrapper{
+    gap: 1rem;
+  }
+  
+  .title_wrapper{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
 }

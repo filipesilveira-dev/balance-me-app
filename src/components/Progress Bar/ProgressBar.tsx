@@ -27,7 +27,7 @@ export function ProgressBar() {
           <div className={style.gridContainer}>
             {/* Primeira Coluna (Ocupa as 3 linhas) */}
             <div className={style.colunaLateralEsquerda}>
-              <p className={style.left_column_title}>Obrigações</p>
+              
 
               <div>
                 <span className={style.left_column_score}>
@@ -41,32 +41,38 @@ export function ProgressBar() {
 
             {/* Segunda Coluna (Ocupa 3 colunas) */}
             <div className={style.colunaMeioItem}>
-              <h3>Equilíbrio do dia</h3>
+              <div className={style.colunaMeioItem_wrapper}>
+                <h3>Equilíbrio do dia</h3>
+                <div className={style.title_wrapper}>
+                  <p className={style.colunaMeioItem_wrapper_left_title}>Obrigações</p> 
+                   <p className={style.colunaMeioItem_wrapper_right_title}>Lazer</p>
+                </div>
 
-              <div className={style.wrapper}>
-                <div
-                  role="meter"
-                  aria-valuenow={totalObligations}
-                  aria-valuemin={0}
-                  aria-valuemax={total}
-                  aria-label={`Obrigações: ${totalObligations} de ${total} pontos`}
-                  className={style.track}
-                >
+                <div className={style.wrapper}>
                   <div
-                    className={`${style.fill} ${style.fillObligations}`}
-                    style={{ flexBasis: `${percentObligations}%` }}
-                  />
-                  <div
-                    className={`${style.fill} ${style.fillLeisure}`}
-                    style={{ flexBasis: `${percentLeisure}%` }}
-                  />
+                    role="meter"
+                    aria-valuenow={totalObligations}
+                    aria-valuemin={0}
+                    aria-valuemax={total}
+                    aria-label={`Obrigações: ${totalObligations} de ${total} pontos`}
+                    className={style.track}
+                  >
+                    <div
+                      className={`${style.fill} ${style.fillObligations}`}
+                      style={{ flexBasis: `${percentObligations}%` }}
+                    />
+                    <div
+                      className={`${style.fill} ${style.fillLeisure}`}
+                      style={{ flexBasis: `${percentLeisure}%` }}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Terceira Coluna (Ocupa as 3 linhas) */}
             <div className={style.colunaLateralDireita}>
-              <p className={style.right_column_title}>Lazer</p>
+              
               <div>
                 <span className={style.right_column_score}>{totalLeisure}</span>
                 <p>pontos</p>

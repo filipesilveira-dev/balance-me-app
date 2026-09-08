@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.app.json",
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2020",
+    "verbatimModuleSyntax": false,
+    "esModuleInterop": true,
+    "types": ["vite/client", "@testing-library/jest-dom", "jest", "node"]
+  },
+  "include": ["src","jest.setup.ts"],
+  "exclude": []
+}

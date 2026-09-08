@@ -84,7 +84,15 @@
   width: 100%;
 }
 
-.button_container{
+.form_input_range_obligation {
+  accent-color: #ef4444;
+}
+
+.form_input_range_leisure {
+  accent-color: #22c55e;
+}
+
+.button_container {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -176,8 +184,8 @@
   color: #ef4444;
 }
 
-@media (min-width: 470px){
-  .form_button{
-    gap: .5rem;
+@media (min-width: 470px) {
+  .form_button {
+    gap: 0.5rem;
   }
 }
