@@ -12,7 +12,7 @@ on:
     paths:
       - "src/**"
       - "public/**"
-      # Caso tenah alteração no próprio workflow
+      # Caso tenha alteração no próprio workflow
       - ".github/workflows/**"
       - "package.json"
       - "package-lock.json"
