@@ -1,5 +1,6 @@
 import style from "./CurrentDate.module.css"
 import { useState, useEffect } from "react";
+import calendar from "@/assets/calendar.svg"
 
 export function CurrentDate() {
     // Estado para armazenar o texto da data formatada
@@ -41,7 +42,7 @@ export function CurrentDate() {
             <div className={style.date_section_container}>
                 <span className={style.day}>Hoje</span>
                 <div className={style.date_container}>
-                    <img className={style.calendarIcon} src="/calendar.svg" alt="Imagem de calendário" />
+                    <img className={style.calendarIcon} src={calendar} alt="Imagem de calendário" />
                     <div className={style.formatted_date_container}>
                         <span className={style.date}>{formattedDate}</span>
                         <span className={style.dayWeek}>{formattedDayWeek}</span>

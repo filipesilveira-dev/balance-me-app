@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import style from "./Accordion.module.css";
+import keyboard_arrow_up from "@/assets/keyboard-arrow-up.svg";
 
 interface accordionProps {
   title: string;
@@ -26,7 +27,7 @@ export function Accordion({ title, variant, children }: accordionProps) {
       >
         <div className={style.trigger_container}>
           <h2>{title}</h2>
-          <img src="/keyboard-arrow-up.svg" />
+          <img src={keyboard_arrow_up} />
         </div>
       </button>
 

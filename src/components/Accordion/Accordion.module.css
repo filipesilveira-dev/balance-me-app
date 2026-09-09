@@ -39,7 +39,7 @@
   height: 1.5rem;
   background-repeat: no-repeat;
   background-size: contain;
-  background-image: url("/work.svg");
+  background-image: url("@/assets/work.svg");
 }
 
 .leisure.trigger h2::before {
@@ -49,7 +49,7 @@
   height: 1.5rem;
   background-repeat: no-repeat;
   background-size: contain;
-  background-image: url("/leaf.svg");
+  background-image: url("@/assets/leaf.svg");
 }
 
 .accordion.open .trigger img {
