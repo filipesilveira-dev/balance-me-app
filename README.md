@@ -8,15 +8,6 @@
   <strong>Visualize o equilíbrio entre lazer e obrigações, identifique sinais de sobrecarga e cultive uma rotina saudável e consciente.</strong>
 </p>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/React-19.x-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
-  <img src="https://img.shields.io/badge/TypeScript-6.x-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/Vite-8.x-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
-  <img src="https://img.shields.io/badge/Zustand-5.x-443e38?style=for-the-badge&logo=zustand&logoColor=white" alt="Zustand" />
-  <img src="https://img.shields.io/badge/Jest-30.x-C21325?style=for-the-badge&logo=jest&logoColor=white" alt="Jest" />
-  <img src="https://img.shields.io/badge/Status-Concluído-success?style=for-the-badge" alt="Status" />
-</p>
-
 ---
 
 ## 📌 Sumário
@@ -72,7 +63,7 @@ Com uma proposta visual, simples e intuitiva, o usuário atribui pesos e níveis
 ```
                     ┌────────────────────────────────┐
                     │      Usuário insere atividade  │
-                    │   (Nome + Intensidade de 1 a 10)│
+                    │  (Nome + Intensidade de 1 a 10)│
                     └───────────────┬────────────────┘
                                     │
                                     ▼
@@ -137,7 +128,6 @@ balance-me-app/
 │   ├── components/         # Componentes modulares da aplicação
 │   │   ├── Accordion/      # Painéis retráteis para formulários
 │   │   ├── CurrentDate/    # Exibição formatada da data atual
-│   │   ├── Dashboard/      # Visão analítica do equilíbrio
 │   │   ├── Empty State/    # Estados visuais para listas vazias
 │   │   ├── Form/           # Formulários reutilizáveis com Zod + Hook Form
 │   │   ├── Header/         # Cabeçalho com identidade visual e navegação
@@ -224,6 +214,8 @@ npm test
 - **Validação Segura com Zod + React Hook Form:** Validação assíncrona, restrição de tamanho máximo de caracteres e conversão automática de tipos (`z.coerce.number()`).
 - **Estado Global Simples com Zustand:** Ausência de *prop drilling* e sincronização instantânea de estado com `localStorage` através do middleware nativo `persist`.
 - **Acessibilidade Web (a11y):** Uso de elementos e atributos semânticos, como `aria-label`, `aria-valuenow` e tags estruturais para leitores de tela.
+- **React Compiler X React Hook Form:**  a presença de reactCompilerPreset() ativa o React Compiler, que trata register("name") como uma expressão pura e memoiza seu retorno, **desconhecendo que o react-hook-form v7 depende de efeitos colaterais na execução de register() a cada render**. A chamada a reset() sem parâmetros após onAddItem() zera os _fields, e a re-renderização disparada pela store 
+`useBalanceMeStore` ativa o cache do React Compiler, impedindo a reidratação dos campos no formulário.
 
 ---
 

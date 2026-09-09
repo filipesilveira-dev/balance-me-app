@@ -42,7 +42,7 @@ export function EmptySytate({ items, variant }: EmptySytateProps) {
               src="/balance.png"
               alt="Imagem de folha"
             />
-            <h4>Nenhum momento de lazer registrado</h4>
+            <h4>Nenhum atividade registrada</h4>
             <p>Adicione atividades que te trazem lazer e bem-estar.</p>
           
         </div>
