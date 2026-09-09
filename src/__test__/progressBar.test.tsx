@@ -51,10 +51,10 @@ describe('ProgressBar - Renderização dos valores obtidos do estado global "ite
     // Quando vazio, a barra de progresso não deve ser exibida e sim a mensagem do estado vazio
     expect(screen.queryByRole('meter')).not.toBeInTheDocument();
     expect(
-      screen.getByText(/nenhum momento de lazer registrado/i)
+      screen.getByText(/Nenhuma atividade registrada/i)
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/adicione atividades que te trazem lazer e bem-estar/i)
+      screen.getByText(/Adicione atividades que te trazem lazer e bem-estar./i)
     ).toBeInTheDocument();
   });
 
